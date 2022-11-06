@@ -39,11 +39,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
    2. Alınan dizinin bir kopyasını döndür
 */
 
-
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
-}
-
+ function kopyala (orijinalTatlar){
+   return(orijinalTatlar)
+   }
+   console.log(kopyala(orijinalTatlar))
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -54,12 +53,18 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 
 Örneğin: dizi25Cesit(orijinalTatlar) kodunuz düzgün çalışıyorsa true değerini döndürür.
 */
-
-
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
-}
-
+var dizi25Cesitmi;
+function dizi25Cesitmi(){
+  const atama =orijinalTatlar.length ;
+  if(atama==25){
+   console.log('true');
+  }
+  else{
+   console.log('false');
+  }
+  return atama;
+  }
+console.log(dizi25Cesitmi());
 
 /* Görev 3:
 Pastane sahibi size yeni bir lezzet fikriyle geldi: Kakule! Bunun da çok tutacağından çok emin. Bu lezzeti eklemek için diziyi değiştirmeniz gerekir.
@@ -73,10 +78,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
   Örneğin: cesitEkle(orijinalTatlar, "Kakule") işlevi doğru çalıştığında ["Kakule", "Muz",..."Vanilya"] şeklinde dönmelidir
 */
 
-
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
-}
+function cesitEkle(tatlar, yeniTat){
+   let yeniTatlar= kopyala(tatlar);
+   yeniTatlar.unshift(yeniTat);
+ return yeniTatlar
+ }
+ console.log(cesitEkle(orijinalTatlar,'kakule'))
 
 
 /* Cörev 4:
@@ -90,11 +97,11 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 
    Örneğin: sonCesitiKaldir(orijinalTatlar) çalıştırıldığında ["Kakule", "Muz",..."Çilek"] döndürülür.
 */
-
-
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(yeniHali){
+yeniHali.pop();
+return yeniHali;
 }
+console.log(sonCesitiKaldir(orijinalTatlar));
 
 
 /* Görev 5:
@@ -108,10 +115,11 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
-}
-
+function indekstekiCesitiGetir(orijinalTatlar, index) {
+   orijinalTatlar[index]
+   return orijinalTatlar[index];
+ }
+ console.log(indekstekiCesitiGetir(orijinalTatlar,3));
 
 /* Görev 6:
 
@@ -127,11 +135,12 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
 
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
-
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(orijinalTatlar,lezzet){
+   let indexL = orijinalTatlar.indexOf(lezzet);
+   orijinalTatlar.splice(indexL, 1);
+   return orijinalTatlar;
 }
-
+console.log(ismeGoreCesitCikar(orijinalTatlar));
 
 /* Görev 7:
 
